@@ -17,6 +17,7 @@ import lombok.Setter;
 public class LibraryCard {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cardId;
 
     private Integer noOfBooksIssued;

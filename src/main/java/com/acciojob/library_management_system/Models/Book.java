@@ -17,6 +17,7 @@ import lombok.Setter;
 public class Book {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer bookId;
 
     private String bookName;
@@ -27,6 +28,11 @@ public class Book {
 
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
+
+    @JoinColumn
+    @ManyToOne
+    private Author author;
+
 
 
 
