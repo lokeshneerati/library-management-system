@@ -21,15 +21,20 @@ public class CardService {
 
         LibraryCard card = new LibraryCard();
         card.setCardStatus(CardStatus.NEW);
+        card.setNoOfBooksIssued(0);
         card = cardRepository.save(card);
         return "The card has been generated with the cardId "+card.getCardId();
     }
     public String associateCardAndStudent(Integer cardId,Integer studentId) {
 
         LibraryCard card = cardRepository.findById(cardId).get();
-
         Student student = studentRepository.findById(studentId).get();
         card.setStudent(student); // This if how you set FK
+        card.setCardStatus(CardStatus.ACTIVE);
+
+        cardRepository.save(card);
+        return "Associating card and student with cardId "+cardId +" and studentId " +studentId;
+
 
 
     }
