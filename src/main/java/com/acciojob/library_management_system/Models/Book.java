@@ -1,9 +1,8 @@
 package com.acciojob.library_management_system.Models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.acciojob.library_management_system.Enum.Genre;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +25,8 @@ public class Book {
 
     private String authorName;
 
-    private String genre;
+    @Enumerated(value = EnumType.STRING)
+    private Genre genre;
 
 
 
