@@ -24,7 +24,6 @@ public class Book {
 
     private Integer noOfPages;
 
-    private String authorName;
 
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
