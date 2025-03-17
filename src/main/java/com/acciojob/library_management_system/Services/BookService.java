@@ -2,7 +2,6 @@ package com.acciojob.library_management_system.Services;
 
 import com.acciojob.library_management_system.Models.Author;
 import com.acciojob.library_management_system.Models.Book;
-import com.acciojob.library_management_system.Models.LibraryCard;
 import com.acciojob.library_management_system.Repositories.AuthorRepository;
 import com.acciojob.library_management_system.Repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class BookService {
     private AuthorRepository authorRepository;
 
     public String addBook(Book book) {
-       book =  bookRepository.save(book);
+       book = bookRepository.save(book);
        return "Book has been saved to the DB with bookId "+book.getBookId();
 
     }
